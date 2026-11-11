@@ -1,0 +1,57 @@
+KẾT QUẢ HIỆU CHỈNH CAMERA
+==================================================
+Kích thước ảnh       : 1280 x 720
+Bàn cờ (góc trong)   : 9 x 6, ô = 25.0 mm
+Số ảnh hợp lệ        : 23/26
+
+MA TRẬN MÁY ẢNH (Camera Matrix):
+[[1203.5739    0.      529.4581]
+ [   0.     1190.0678  365.0764]
+ [   0.        0.        1.    ]]
+  fx = 1203.574 px, fy = 1190.068 px
+  cx = 529.458 px, cy = 365.076 px  (tâm ảnh lý tưởng: 640.0, 360.0)
+  Góc nhìn FOV        : ngang 56.00°, dọc 33.66°
+
+HỆ SỐ MÉO (Distortion Coefficients) [k1, k2, p1, p2, k3]:
+  -0.021187, 0.532725, 0.002423, -0.036276, -0.415085
+  k1, k2, k3: méo xuyên tâm (radial);  p1, p2: méo tiếp tuyến (tangential)
+
+ĐÁNH GIÁ SAI SỐ
+  Lần 1 (tất cả 26 ảnh)          : RMS = 1.0534 px, mean = 0.7878 px
+  Ảnh bị loại (> 1.5 px)          : WIN_20261111_15_59_19_Pro.jpg (2.704), WIN_20261111_16_02_36_Pro.jpg (2.056), WIN_20261111_16_02_57_Pro.jpg (1.547)
+  Lần 2 (sau khi loại, 23 ảnh)    : RMS = 0.7800 px
+  --- Kết quả cuối cùng ---
+  RMS (cv2.calibrateCamera)          : 0.7800 px
+  Mean reprojection error            : 0.6358 px
+  Ảnh sai số nhỏ nhất                : WIN_20261111_16_03_18_Pro.jpg (0.3563 px)
+  Ảnh sai số lớn nhất                : WIN_20261111_16_01_45_Pro.jpg (1.1180 px)
+
+Sai số RMS theo từng ảnh (px) - lần 1 / cuối cùng:
+  WIN_20261111_15_59_11_Pro.jpg       0.7877 / 0.6419
+  WIN_20261111_15_59_14_Pro.jpg       1.0612 / 1.0970
+  WIN_20261111_15_59_15_Pro.jpg       0.8436 / 0.8026
+  WIN_20261111_15_59_16_Pro.jpg       0.9047 / 0.8643
+  WIN_20261111_15_59_17_Pro.jpg       0.8253 / 0.8290
+  WIN_20261111_15_59_18_Pro.jpg       0.9622 / 0.9769
+  WIN_20261111_15_59_19_Pro.jpg       2.7045 /   (loại)
+  WIN_20261111_15_59_20_Pro.jpg       0.5986 / 0.6894
+  WIN_20261111_15_59_35_Pro.jpg       0.7617 / 0.7254
+  WIN_20261111_16_01_28_Pro.jpg       0.7398 / 0.7175
+  WIN_20261111_16_01_31_Pro.jpg       0.8674 / 0.7726
+  WIN_20261111_16_01_34_Pro.jpg       0.6645 / 0.6526
+  WIN_20261111_16_01_35_Pro.jpg       0.8121 / 0.7608
+  WIN_20261111_16_01_39_Pro.jpg       0.7326 / 0.6897
+  WIN_20261111_16_01_43_Pro.jpg       0.9453 / 0.9648
+  WIN_20261111_16_01_45_Pro.jpg       1.1872 / 1.1180
+  WIN_20261111_16_02_32_Pro.jpg       0.6744 / 0.7658
+  WIN_20261111_16_02_35_Pro.jpg       0.5960 / 0.5529
+  WIN_20261111_16_02_36_Pro.jpg       2.0565 /   (loại)
+  WIN_20261111_16_02_42_Pro.jpg       0.4561 / 0.4016
+  WIN_20261111_16_02_45_Pro.jpg       1.0903 / 1.0595
+  WIN_20261111_16_02_57_Pro.jpg       1.5468 /   (loại)
+  WIN_20261111_16_03_00_Pro.jpg       0.4420 / 0.4252
+  WIN_20261111_16_03_05_Pro.jpg       1.0473 / 0.9637
+  WIN_20261111_16_03_09_Pro.jpg       0.4515 / 0.3988
+  WIN_20261111_16_03_18_Pro.jpg       0.3893 / 0.3563
+
+Nhận xét: RMS < 1 px -> hiệu chỉnh TỐT, chấp nhận được.
